@@ -1,10 +1,10 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class Player {
     private String name;
     private int age;
-    public int GoldCoins;
     public int totalPoints;
+    private ArrayList < String > items;
     
     public Player() {
         System.out.println("Welcome to the Game of Thrills! First, let's build a terrific character for this adventure!");
@@ -19,15 +19,29 @@ public class Player {
         age = scanner.nextInt();
         scanner.nextLine(); // Consume the remaining newline character
 
-        System.out.println("Your character name is " + name + " and your character's age is " + age +"! Your total point is " + totalPoints + ". " + "Your total number of gold coins right now is " + GoldCoins + " coins. Let's go! Entering the first round...");
+        //Initialize the arraylist of items
+        this.items = new ArrayList < String > ();
+
+        System.out.println("Your character name is " + name + " and your character's age is " + age +"! Your total point is " + totalPoints + ". Let's go! Entering the first round...");
     }
     public int getTotalPoints() {
         return totalPoints;
     }
 
-    public int getGoldCoins() {
-        return GoldCoins;
+    public void addItems(String x) {
+        this.items.add(x);
+        System.out.print(x + " has been added to your list of items!");
     }
+
+    public boolean containItems(String x){
+        return this.items.contains(x);
+    }
+
+    public void removeItem(String x){
+            this.items.remove(x);
+            System.out.print(x + " has been removed from your list of items.");
+
+}
 }
 
 
