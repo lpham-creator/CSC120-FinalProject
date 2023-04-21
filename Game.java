@@ -1,20 +1,20 @@
 import java.util.*;
 
 public class Game {
-  private static final int POINTS_TO_WIN = 200;
+  private static final int POINTS_TO_WIN = 500;
   private static final int QUESTIONS_PER_ROUND = 1;
-  private int totalPoints;
-  private int GoldCoins;
   private Player player;
-  private int round;
+  private int pointsForRound1 = 0;
+  private int pointsForRound2 = 0;
+  private int pointsForRound3 = 0;
 
   public Game() {
-    Player player = new Player();
-    totalPoints = 0;
-    GoldCoins = 0;
-    round = 1;
+    this.player = new Player();
+    this.pointsForRound1 = 0;
+    this.pointsForRound2 = 0;
+    this.pointsForRound3 = 0;
   }
-
+  
   public void start() {
     Scanner scanner = new Scanner(System.in);
 
@@ -26,7 +26,6 @@ public class Game {
       } else {
         System.out.println("Drum roll for the last round! Welcome to the Ice Land, a notoriously dangerous icy kingdom where survival is the ultimate goal. As you step onto the frozen terrain, you can feel the bitter cold piercing through your skin. Beware! Dangers await...");
       }
-      int pointsForRound = 0;
 
       for (int i = 1; i <= QUESTIONS_PER_ROUND; i++) {
         System.out.println("Choose your quest:");
@@ -40,28 +39,50 @@ public class Game {
           if (questChoice == 1) {
             System.out.println("You chose Quest 1! Have fun harvesting!");
             System.out.println("Swoosh swoosh swoosh! The farmers in this village have 4 arms, so they are twice as fast!");
-            pointsForRound += 100;
-            totalPoints += 100;
-            GoldCoins += 30;
+            pointsForRound1 += 100;
+            player.totalPoints += 100;
+            System.out.println("Round 1 has ended! You gained " + pointsForRound1 + " points!");
           } else if (questChoice == 2) {
             System.out.println("You chose Quest 2! Let's go artsyyyy!");
             System.out.println("Paint paint paint...");
-            pointsForRound += 30;
-            totalPoints += 30;
-            GoldCoins += 100;
+            pointsForRound1 += 30;
+            player.totalPoints += pointsForRound1;
+            System.out.println("Round 1 has ended! You gained " + pointsForRound1 + " points!");
           } else if (questChoice == 3) {
             System.out.println("You chose Quest 3! Have fun collecting!");
             Collectibles collector = new Collectibles();
             String randomItem = collector.getRandomItem();
+            int itemValue = collector.getItemValue(randomItem);
             if (randomItem != null) {
-              int itemValue = collector.getItemValue(randomItem);
               System.out.println("You found a " + randomItem + " worth " + itemValue + " points!");
+              player.totalPoints += itemValue;
+              player.addItems(randomItem);
+
             } else {
               System.out.println("No items found.");
             }
-            pointsForRound += collector.getItemValue(randomItem);
-            totalPoints += collector.getItemValue(randomItem);
-            GoldCoins += 0;
+            System.out.println();
+            System.out.println("Do you want to keep this item? Enter 1 if you want to keep it, 2 if you want to drop the item.");
+            Scanner scanner3 = new Scanner(System.in);
+            
+            // Prompt the player to enter their answer
+            System.out.print("Enter your answer: ");
+            int answer = scanner3.nextInt();
+    
+            //If-else statement 
+            if (answer == 1) {
+                System.out.print("Gotcha! You can keep " + randomItem);
+            } else if (answer == 2) {
+                player.removeItem(randomItem);
+                player.totalPoints -= itemValue;
+                pointsForRound1 -= itemValue;
+            } else{
+                System.out.print("Invalid answer. Please try again!");
+            }
+            System.out.println();
+            pointsForRound1 += collector.getItemValue(randomItem);
+            player.totalPoints += pointsForRound1;
+            System.out.println("Round 1 has ended! You gained " + pointsForRound1 + " points!");
 
           }
         } else if (round == 2) {
@@ -82,35 +103,69 @@ public class Game {
             boolean isAnswerCorrect = king.askQuestion(question, answer);
             if (isAnswerCorrect) {
               System.out.println("Congratulations! You may pass through.");
-              pointsForRound += 300;
-              totalPoints += 300;
-              GoldCoins += 50;
+              pointsForRound2 += 300;
+              player.totalPoints += pointsForRound2;
             } else {
               System.out.println("You have been banished!");
-              pointsForRound += 0;
-              totalPoints += 0;
-              GoldCoins += 0;
-              round = 1;
+              pointsForRound2 += 0;
+              player.totalPoints += 0;
             }
+            System.out.println("Round 2 has ended! You gained " + pointsForRound2 + " points!");
           } else if (questChoice == 2) {
-            System.out.println("You chose Quest B!");
-            pointsForRound += 20;
+            System.out.println("You chose Quest 2! Have fun catsitting for our beautiful princess!");
+            if (player.containItems("Love Potion")){
+              System.out.println("The princess has fallen in love with your graceful manners! +700 points!");
+              pointsForRound2 += 700;
+              player.totalPoints += 700;
+            } else {
+              pointsForRound2 += 20;
+              player.totalPoints += 20;
+            }
+
+            System.out.println("Round 2 has ended! You gained " + pointsForRound2 + " points!");
           } else {
             System.out.println("Invalid choice, try again!");
             i--; // Decrement the loop counter to repeat the current question
           }
           scanner.nextLine();
+
         } else {
-          System.out.println("1. Quest A");
-          System.out.println("2. Quest B");
+          System.out.println("1. Science");
+          System.out.println("2. Arts");
 
           int questChoice = scanner.nextInt();
           if (questChoice == 1) {
-            System.out.println("You chose Quest A!");
-            pointsForRound += 50;
+            System.out.println("You chose Science Quest! Listen carefully: If a train is traveling at a speed of 60 miles per hour, and it takes 3 hours to travel from point A to point B, how far apart are point A and point B?");
+
+            Scanner scanner4 = new Scanner(System.in);
+            System.out.print("Enter your answer: ");
+            int answer = scanner4.nextInt();
+            if (answer == 180) {
+              pointsForRound3 += 250;
+              player.totalPoints += 250;
+              System.out.print("That's correct! What a smart adventurer.");
+              System.out.println();
+            } else {
+              System.out.print("Wrong!");
+              System.out.println();
+            }
+            System.out.println("Round 3 has ended! You gained " + pointsForRound3 + " points!");
           } else if (questChoice == 2) {
-            System.out.println("You chose Quest B!");
-            pointsForRound += 100;
+            System.out.println("You chose the Arts Quest! Listen carefully: What is Dali's art style?");
+            
+            Scanner scanner5 = new Scanner(System.in);
+            System.out.print("Enter your answer: ");
+            String answer = scanner5.nextLine();
+            if (answer == "The Persistence of Memory") {
+              pointsForRound3 += 250;
+              player.totalPoints += 250;
+              System.out.print("That's correct! What a smart adventurer.");
+              System.out.println();
+            } else {
+              System.out.print("Wrong!");
+              System.out.println();
+            }
+            System.out.println("Round 3 has ended! You gained " + pointsForRound3 + " points!");
           } else {
             System.out.println("Invalid choice, try again!");
             i--; // Decrement the loop counter to repeat the current question
@@ -118,17 +173,19 @@ public class Game {
           scanner.nextLine();
         }
       }
+      player.totalPoints += pointsForRound3;
 
-      System.out.println("Round ended. You scored " + pointsForRound + " points!");
-      totalPoints += pointsForRound;
-
-      if (round == 3 && totalPoints >= POINTS_TO_WIN) {
-        System.out.println("Congratulations! You won the game with " + totalPoints + " points! Your reward is: Cold pudding!");
+      if (round == 3 && player.totalPoints >= POINTS_TO_WIN) {
+        System.out.println("Congratulations! You won the game with " + player.getTotalPoints() + " points! Your reward is: Cold pudding!");
         return;
       }
     }
 
-    System.out.println("Sorry, you lost the game. Better luck next time!");
+    System.out.println("Sorry, you lost the game with " + player.getTotalPoints() + " points. Better luck next time!");
   }
+  public static void main(String[] args) {
+    Game game = new Game();
+    game.start();
+}
 
 }
