@@ -17,6 +17,7 @@ public class Game {
   
   public void start() {
     Scanner scanner = new Scanner(System.in);
+    
 
     for (int round = 1; round < 4; round++) {
       if (round == 1) {
@@ -87,7 +88,7 @@ public class Game {
           }
         } else if (round == 2) {
           System.out.println("1. The King of this area loves to talk to courageous young Warriors! Join him for a tea time to win a prize of 300 points if you make him happy! Else, you will have to go back to round 1 and lose all your points.");
-          System.out.println("2. Go catsitting for our graceful princess! Your reward is: A kiss & 20 points!");
+          System.out.println("2. (Only available to players with Love Potion) Go catsitting for our graceful princess! Your reward is: A kiss & 300 points!");
 
           int questChoice = scanner.nextInt();
           if (questChoice == 1) {
@@ -111,21 +112,13 @@ public class Game {
               player.totalPoints += 0;
             }
             System.out.println("Round 2 has ended! You gained " + pointsForRound2 + " points!");
-          } else if (questChoice == 2) {
+          } else if (questChoice == 2 && player.containItems("Love Potion")) {
             System.out.println("You chose Quest 2! Have fun catsitting for our beautiful princess!");
-            if (player.containItems("Love Potion")){
-              System.out.println("The princess has fallen in love with your graceful manners! +700 points!");
-              pointsForRound2 += 700;
-              player.totalPoints += 700;
-            } else {
-              pointsForRound2 += 20;
-              player.totalPoints += 20;
-            }
-
-            System.out.println("Round 2 has ended! You gained " + pointsForRound2 + " points!");
-          } else {
-            System.out.println("Invalid choice, try again!");
-            i--; // Decrement the loop counter to repeat the current question
+            pointsForRound2 += 300;
+            player.totalPoints += 300;
+            System.out.println("Round 2 has ended! You gained " + pointsForRound2 + " points!");}
+            else {
+            throw new IllegalArgumentException("You don't have the Love Potion!");
           }
           scanner.nextLine();
 
