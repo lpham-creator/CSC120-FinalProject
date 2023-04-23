@@ -166,7 +166,6 @@ public class Game {
           scanner.nextLine();
         }
       }
-      player.totalPoints += pointsForRound3;
 
       if (round == 3 && player.totalPoints >= POINTS_TO_WIN) {
         System.out.println("Congratulations! You won the game with " + player.getTotalPoints() + " points! Your reward is: Cold pudding!");
