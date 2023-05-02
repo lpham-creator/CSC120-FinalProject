@@ -32,8 +32,8 @@ public class Game {
         System.out.println("Choose your quest:");
 
         if (round == 1) {
-          System.out.println("1. Go North to help the farmers in their kumquat harvest! It's going to be hottttt. Your reward is: 30 gold coins & 100 points!");
-          System.out.println("2. Go South to help our favorite painter - Michelangulu - finish his fresco for the church! That's noble work for sure. Your reward is: 100 gold coins & 30 points!");
+          System.out.println("1. Go North to help the farmers in their kumquat harvest! It's going to be hottttt. Your reward is: 100 points!");
+          System.out.println("2. Go South to help our favorite painter - Michelangulu - finish his fresco for the church! That's noble work for sure. Your reward is: 100 points!");
           System.out.println("3. Collect items in the Sahawaii dessert! You will lose 100 points for this quest, but you have a chance of finding a Grand Treasure of 5000 points!");
 
           int questChoice = scanner.nextInt();
@@ -46,7 +46,7 @@ public class Game {
           } else if (questChoice == 2) {
             System.out.println("You chose Quest 2! Let's go artsyyyy!");
             System.out.println("Paint paint paint...");
-            pointsForRound1 += 30;
+            pointsForRound1 += 100;
             player.totalPoints += pointsForRound1;
             System.out.println("Round 1 has ended! You gained " + pointsForRound1 + " points!");
           } else if (questChoice == 3) {
