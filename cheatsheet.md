@@ -42,9 +42,11 @@
 Firstly, the game will promt you to enter your name and age. After that, you will experience three rounds of gameplay, and the game will mostly be Q&A. The goal is to gain 500 points or over to win the game.
 
 *Round 1: Deadly Dessert*
+
 For this round, if you want to go through the game ASAP, just choose Quest 1 or Quest 2, as you will surely gain 100 points from these quests. Quest 3 is for players who want to try their luck. Quest 3 also has an undo mechanical: if you don't like the item you found, you can throw it away. There's a hidden treasure: if you choose quest 3 and find a **Love Potion**, you can automatically pass round 2 without having to answer the King's question, so don't throw that away!
 
 *Round 2: Lake of Love*
+
 This round has two Quests: Answer the King's question or catsitting for the Princess, however, the latter's only available to players who has Love Potion. Choose Quest 1 if you don't have the item. Here are the answers to all available questions:
 
 - What is the capital of France? Paris
@@ -54,6 +56,7 @@ This round has two Quests: Answer the King's question or catsitting for the Prin
 If you choose catsitting for the Princess, you automatically pass this round with 300 points!
 
 *Round 3: Ice Land*
+
 This round has 2 quests: Arts and Science. Here are the answers to the 2 Quests:
 
 - Science: 180
