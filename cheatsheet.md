@@ -1,4 +1,4 @@
-## Game Class Cheatsheet
+## Game Class 
 ### Attributes
 - **POINTS_TO_WIN**: the number of points required to win the game
 - **QUESTIONS_PER_ROUND**: the number of questions per round
@@ -10,7 +10,7 @@
 - **public Game()**: Constructor that creates a new Game object and a Player object, and resets the points for each round to 0.
 - **public void start()**: Method that starts the game with all 3 rounds.
 
-## King Class Cheatsheet
+## King Class 
 ### Attributes
 - **questions**: the hashtable of questions for the King to choose from
 - **rand**: a random object that is used to pick a random question from the pool
@@ -18,7 +18,7 @@
 - **getQuestion()**: Gets a random question from the questions Hashtable.
 - **askQuestion()**: Asks the question and checks if the answers match.
 
-## Player Class Cheatsheet
+## Player Class 
 ### Attributes
 - **name**: the name of the player (player will be prompted to enter their name via a Scanner object)
 - **age**: the age of the player (player will be prompted to enter their age via a Scanner object)
@@ -30,7 +30,7 @@
 - **addItems()**: add an item 
 - **removeItem()**: remove an item from the player's list
 
-## Collectibles Class Cheatsheet
+## Collectibles Class 
 ### Attributes
 - **items**: a hashtable used to store the items and their corresponding point values
 - **rand**: random object to randomly pick an item for the traveller
