@@ -209,13 +209,4 @@ public class Game {
     System.out.println("Sorry, you lost the game with " + player.getTotalPoints() + " points. Better luck next time!");
   }
 
-  /**
-   * Main method to test the game and see how it runs.
-   * @param args
-   */
-  public static void main(String[] args) {
-    Game game = new Game();
-    game.start();
-}
-
 }
