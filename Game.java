@@ -1,13 +1,44 @@
 import java.util.*;
 
+/**
+ * The Game class represents a game with three rounds, each with a different set of quests and challenges. 
+ * The player can choose which quest to undertake and earn points towards their total score. 
+ */
 public class Game {
+  /**
+   * The number of points required to win the game.
+   */
   private static final int POINTS_TO_WIN = 500;
+
+  /**
+   * The number of questions per round.
+   */
   private static final int QUESTIONS_PER_ROUND = 1;
+
+  /**
+   * The player who is playing the game.
+   */
   private Player player;
+
+  /**
+   * The number of points the player has earned in round 1.
+   */
   private int pointsForRound1 = 0;
+
+  /**
+   * The number of points the player has earned in round 2.
+   */
   private int pointsForRound2 = 0;
+
+  /**
+   * The number of points the player has earned in round 3.
+   */
   private int pointsForRound3 = 0;
 
+
+  /**
+   * Initialize a new Game and a player object, and resets the points for round to 0.
+   */
   public Game() {
     this.player = new Player();
     this.pointsForRound1 = 0;
@@ -15,9 +46,11 @@ public class Game {
     this.pointsForRound3 = 0;
   }
   
+  /**
+   * Starts the game with all 3 rounds.
+   */
   public void start() {
     Scanner scanner = new Scanner(System.in);
-    
 
     for (int round = 1; round < 4; round++) {
       if (round == 1) {
@@ -175,6 +208,11 @@ public class Game {
 
     System.out.println("Sorry, you lost the game with " + player.getTotalPoints() + " points. Better luck next time!");
   }
+
+  /**
+   * Main method to test the game and see how it runs.
+   * @param args
+   */
   public static void main(String[] args) {
     Game game = new Game();
     game.start();
