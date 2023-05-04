@@ -43,7 +43,7 @@ Firstly, the game will promt you to enter your name and age. After that, you wil
 
 *Round 1: Deadly Dessert*
 
-For this round, if you want to go through the game ASAP, just choose Quest 1 or Quest 2, as you will surely gain 100 points from these quests. Quest 3 is for players who want to try their luck. Quest 3 also has an undo mechanical: if you don't like the item you found, you can throw it away. There's a hidden treasure: if you choose quest 3 and find a **Love Potion**, you can automatically pass round 2 without having to answer the King's question, so don't throw that away!
+For this round, if you want to go through the game ASAP, just choose Quest 1 or Quest 2, as you will surely gain 100 points from these quests. Quest 3 is for players who want to try their luck. Quest 3 also has an undo mechanical: if you don't like the item you found, you can throw it away. There's a hidden treasure: if you choose quest 3 and find a **Love Potion**, you can automatically pass round 2 without having to answer the King's question!
 
 *Round 2: Lake of Love*
 
