@@ -17,7 +17,7 @@ _____ 2 pts: Submission includes a **cheat sheet** (`cheatsheet.md`) documenting
 
 **YES** 2 pts: Selected classes(s) are **effective, efficient** at supporting the desired operations and program behavior.
 
-_____ 2 pts: Design justification includes a discussion of at least one (reasonable) **alternative design** that could have been used, and the reasons why you decided against this alternative.
+**YES** 2 pts: Design justification includes a discussion of at least one (reasonable) **alternative design** that could have been used, and the reasons why you decided against this alternative.
 
 **YES** 2 pts: The project makes effective use of **Java built-in classes** whenever they are appropriate.
 
@@ -31,18 +31,18 @@ _____ 2 pts: Design justification includes a discussion of at least one (reasona
 
 **YES** 2 pts: Executes fully & consistently without crashing (exception/freeze).
 
-_____ 2 pt: Complies with style guidelines (missing items 1 pt each):
+ 2 pt: Complies with style guidelines (missing items 1 pt each):
 
-      _____ Classes & class members all have Javadoc header comments.
+      **YES** Classes & class members all have Javadoc header comments.
 
-      _____ Clear and consistent indentation of bracketed sections.
+      **YES** Clear and consistent indentation of bracketed sections.
 
-      _____ Adheres to Java conventions on naming & capitalization.
+      **YES** Adheres to Java conventions on naming & capitalization.
 
-      _____ Methods & variables all have clear and accurate names.
+      **YES** Methods & variables all have clear and accurate names.
 
-      _____ Methods avoid confusing side effects.
+      **YES** Methods avoid confusing side effects.
 
-_____ 1 pt: All required files included with submission (including completed checklist file).
+**YES** 1 pt: All required files included with submission (including completed checklist file).
 
-_____ 1 pt: `readme.md` contains your reflection on the project and responses to all prompts .
+**YES** 1 pt: `readme.md` contains your reflection on the project and responses to all prompts .

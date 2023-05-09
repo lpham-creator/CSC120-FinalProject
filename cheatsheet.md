@@ -52,6 +52,7 @@ This round has two Quests: Answer the King's question or catsitting for the Prin
 - What is the capital of France? Paris
 - What is the highest mountain in the world? Mount Everest
 - What is the largest mammal in the world? Blue Whale
+- Beaches or snow? Beaches
 
 If you choose catsitting for the Princess, you automatically pass this round with 300 points!
 
@@ -64,3 +65,4 @@ This round has 2 quests: Arts and Science. Here are the answers to the 2 Quests:
 
 If you do everything right, you should win the game with 500 points or more ! :-)
 
+*age cannot above 100?

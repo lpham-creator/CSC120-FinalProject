@@ -21,8 +21,9 @@ public class King {
     public King() {
         questions = new Hashtable<>();
         questions.put("What is the capital of France?", "Paris");
-        questions.put("What is the highest mountain in the world?", "Mount Everest");
+        questions.put("What is the highest mountain in the world?", "Everest");
         questions.put("What is the largest mammal in the world?", "Blue Whale");
+        questions.put("Beaches or snow?", "Beaches");
         rand = new Random();
     }
 

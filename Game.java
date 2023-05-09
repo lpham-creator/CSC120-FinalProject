@@ -129,7 +129,7 @@ public class Game {
             King king = new King();
             Scanner scanner2 = new Scanner(System.in);
 
-            System.out.println("King: Welcome, traveler! Answer my question correctly to pass through.");
+            System.out.println("King: Welcome, traveler! Answer my question correctly to pass through. Remember to capitalize your answer :)");
             String question = king.getQuestion();
             System.out.println("King: " + question);
 
@@ -181,8 +181,8 @@ public class Game {
             
             Scanner scanner5 = new Scanner(System.in);
             System.out.print("Enter your answer: ");
-            String answer = scanner5.nextLine();
-            if (answer == "The Persistence of Memory") {
+            String answer1 = scanner5.nextLine();
+            if (answer1 == "Surrealism") {
               pointsForRound3 += 250;
               player.totalPoints += 250;
               System.out.print("That's correct! What a smart adventurer.");
